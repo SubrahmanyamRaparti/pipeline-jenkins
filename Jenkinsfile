@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-	DOCKER_PASS_KEY = credentials('DockerKey')
+	DOCKER_PASS_KEY = credentials('dockerkey')
     }    
 
     stages {
