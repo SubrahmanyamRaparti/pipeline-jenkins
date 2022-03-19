@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  maven_java_app:
+    container_name: maven_java_app
+    image: $IMAGE:$BUILD_TAG
+    networks:
+      - net
+
+networks:
+  net:

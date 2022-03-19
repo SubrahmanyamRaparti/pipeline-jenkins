@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  java_app:
+    container_name: java_app
+    image: subrahmanyamr/java_app:$BUILD_TAG
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - net
+
+networks:
+  net:
