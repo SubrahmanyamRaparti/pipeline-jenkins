@@ -4,4 +4,6 @@ echo '##############################################'
 echo '################ Building Jar ################' 
 echo '##############################################'
 
-docker container run --rm -v /home/ubuntu/jenkins/pipeline/java-app:/app -v /root/.m2/:/root/.m2/ -w /app maven:ibmjava-alpine "$@"
+WORKSPACE=/home/ubuntu/jenkins/jenkins_home/workspace/pipeline-work2
+
+docker container run --rm -v $WORKSPACE/java-app:/app -v /root/.m2/:/root/.m2/ -w /app maven:ibmjava-alpine "$@"
