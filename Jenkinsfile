@@ -1,6 +1,10 @@
 pipeline {
     agent any
-    
+
+    environment {
+	DOCKER_PASS_KEY = credentials('DockerKey')
+    }    
+
     stages {
         stage('Build') {
             steps {
