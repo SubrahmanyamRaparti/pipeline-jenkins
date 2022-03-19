@@ -9,8 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                ./home/ubuntu/jenkins/pipeline/jenkins/build/mvn.sh mvn -B -DskipTests clean package
-                ./home/ubuntu/jenkins/pipeline/jenkins/build/build.sh
+                ./jenkins/build/mvn.sh mvn -B -DskipTests clean package
+                ./jenkins/build/build.sh
                 '''
             }
             post {
@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh ''' 
-                ./home/ubuntu/jenkins/pipeline/jenkins/test/mvn.sh mvn test
+                ./jenkins/test/mvn.sh mvn test
                 '''
             }
             post {
@@ -34,13 +34,13 @@ pipeline {
         stage('Push') {
             steps {
                 sh '''
-                ./home/ubuntu/jenkins/pipeline/jenkins/push/push.sh
+                ./jenkins/push/push.sh
                 '''
             }
         }
         stage('Deploy') {
             steps {
-                sh './home/ubuntu/jenkins/pipeline/jenkins/deploy/deploy.sh' 
+                sh './jenkins/deploy/deploy.sh' 
             }
         }
     }
