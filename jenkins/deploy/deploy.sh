@@ -4,7 +4,7 @@ echo subrahmanyamr/java_app > /tmp/.auth
 echo $BUILD_TAG >> /tmp/.auth
 echo $DOCKER_PASS_KEY >> /tmp/.auth
 
-IPV4=ec2-13-233-9-11.ap-south-1.compute.amazonaws.com
+IPV4=ec2-3-108-234-12.ap-south-1.compute.amazonaws.com
 
 scp -i "/home/ubuntu/Linux.pem" /tmp/.auth ubuntu@$IPV4:/tmp/.auth
 
